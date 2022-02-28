@@ -1,0 +1,20 @@
+{
+  "name": "chat-server",
+  "version": "1.0.0",
+  "description": "Chatroom Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "JeansDev",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "socket.io": "^4.4.1"
+  },
+  "engines": {
+    "node": "16.13"
+  }
+}

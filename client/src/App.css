@@ -1,0 +1,23 @@
+.chat-form {
+  width: 300px;
+}
+
+.badge {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  background-color: #F7F6F2;
+  z-index: 1055;
+}
+
+.modal-footer{
+  position: sticky;
+  bottom: 0;
+  background-color: #F7F6F2;
+  z-index: 1055;
+  display: block;
+}
