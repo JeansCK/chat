@@ -19,10 +19,12 @@ const ChatForm = (props) => {
   }
 
   function onSubmit(e) {
-    navigate({
-      pathname: "/chatroom",
-      search: `?name=${name}&room=${room}`
-    });
+    if (name) {
+      navigate({
+        pathname: "/chatroom",
+        search: `?name=${name}&room=${room}`
+      });
+    }
   }
 
   return (

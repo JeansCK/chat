@@ -11,21 +11,20 @@ const ChatRoom = () => {
   const navigate = useNavigate();
 
   const [searchParams] = useSearchParams();
-  const name = searchParams.get("name").trim().toLowerCase();
-  const room = searchParams.get("room").trim().toLowerCase();
+  const name = searchParams.get("name") && searchParams.get("name").trim().toLowerCase();
+  const room = searchParams.get("room") && searchParams.get("room").trim().toLowerCase();
 
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-
-    if (!name) {
+    
+    if (!name || !room) {
       navigate("/");
-
+    
     } else {
-
+    
       socket = io(process.env.REACT_APP_SERVER_URL);
-      sessionStorage.setItem("socketId", socket.id);
 
       join();
 
@@ -41,9 +40,9 @@ const ChatRoom = () => {
       socket.io.on("reconnect", (attempt) => {
         join();
       });
-
+    
     }
-
+    
   // eslint-disable-next-line
   }, []);
   
@@ -60,7 +59,6 @@ const ChatRoom = () => {
   }
 
   const exitRoom = () => {
-    sessionStorage.setItem("name", "");
     socket.disconnect();
     navigate("/");
   }
